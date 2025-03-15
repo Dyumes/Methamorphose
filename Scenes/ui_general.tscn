@@ -1,0 +1,110 @@
+[gd_scene load_steps=8 format=3 uid="uid://bic52gypmu5ve"]
+
+[ext_resource type="Script" path="res://scripts/Buying Shop/button_ui.gd" id="1_5pkmg"]
+[ext_resource type="Script" path="res://scripts/ui_general.gd" id="1_t5f3v"]
+[ext_resource type="Texture2D" uid="uid://ds41oo4fiv5nf" path="res://sprites/Design sans titre (25).png" id="2_5gjdr"]
+[ext_resource type="Texture2D" uid="uid://cvondiygxf1ht" path="res://sprites/book_ui.png" id="3_3tc8r"]
+[ext_resource type="FontFile" path="res://Assets/MorrisRoman-Black.ttf" id="4_kg21l"]
+[ext_resource type="Texture2D" path="res://Assets/UI_Sprites/old-parchment-paper-scroll-sheet-vintage-aged-or-texture-background-png.png" id="5_4bk0s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_puutn"]
+font = ExtResource("4_kg21l")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="UI_general" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_t5f3v")
+
+[node name="Grey_background" type="ColorRect" parent="."]
+visible = false
+offset_right = 1153.0
+offset_bottom = 644.0
+color = Color(0.109804, 0.109804, 0.109804, 0.823529)
+
+[node name="ButtonOpening" type="CanvasGroup" parent="."]
+
+[node name="Button" type="Button" parent="ButtonOpening"]
+offset_left = 968.0
+offset_top = 458.0
+offset_right = 1064.0
+offset_bottom = 535.0
+scale = Vector2(0.711012, 0.777433)
+action_mode = 0
+text = "Receipt
+"
+script = ExtResource("1_5pkmg")
+
+[node name="bookImage" type="Sprite2D" parent="ButtonOpening"]
+position = Vector2(1002, 482)
+scale = Vector2(0.3855, 0.346)
+texture = ExtResource("2_5gjdr")
+
+[node name="BookUI" type="CanvasGroup" parent="."]
+visible = false
+position = Vector2(590, 456)
+scale = Vector2(1.8855, 1.5345)
+
+[node name="Book" type="Sprite2D" parent="BookUI"]
+texture = ExtResource("3_3tc8r")
+
+[node name="ButtonClosing" type="CanvasGroup" parent="."]
+visible = false
+position = Vector2(46, -89)
+
+[node name="ButtonClosingFrame" type="ColorRect" parent="ButtonClosing"]
+offset_left = 841.0
+offset_top = 299.0
+offset_right = 908.0
+offset_bottom = 358.0
+color = Color(0.970244, 0.122144, 0.125774, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="ButtonClosing"]
+offset_left = 840.0
+offset_top = 299.0
+offset_right = 936.0
+offset_bottom = 376.0
+scale = Vector2(0.711012, 0.777433)
+action_mode = 0
+text = "Close"
+script = ExtResource("1_5pkmg")
+
+[node name="QuestText" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 777.0
+offset_top = 83.0
+offset_right = 1065.0
+offset_bottom = 112.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quest"
+label_settings = SubResource("LabelSettings_puutn")
+
+[node name="ScrollSprite" type="TextureRect" parent="QuestText"]
+unique_name_in_owner = true
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -32.0
+offset_right = 31.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_4bk0s")
+expand_mode = 1
+
+[connection signal="pressed" from="ButtonOpening/Button" to="ButtonOpening/Button" method="_receipt_pressed"]
+[connection signal="pressed" from="ButtonClosing/Button" to="ButtonClosing/Button" method="_receipt_close"]

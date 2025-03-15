@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dbvbjslwwo2o5"]
+
+[ext_resource type="Texture2D" path="res://Assets/Idle Sprites/Miku.png" id="1_glpr6"]
+[ext_resource type="Script" path="res://Scenes/Dialogue/character.gd" id="1_ushfy"]
+
+[node name="Character" type="Node2D"]
+script = ExtResource("1_ushfy")
+
+[node name="CharacterSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(619.5, 321.25)
+scale = Vector2(0.435833, 0.459643)
+texture = ExtResource("1_glpr6")
