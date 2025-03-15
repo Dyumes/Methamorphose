@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://dnoo7cpte88i5"]
+
+[ext_resource type="PackedScene" uid="uid://cfdmjykvq2j7r" path="res://Drag n Drop/object.tscn" id="2_8dktl"]
+[ext_resource type="PackedScene" uid="uid://c1yhn6pplbnvi" path="res://Drag n Drop/vrai_platform.tscn" id="2_g3for"]
+
+[node name="world" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -24.0
+offset_top = -21.0
+offset_right = 1164.0
+offset_bottom = 669.0
+mouse_filter = 2
+
+[node name="object" parent="." instance=ExtResource("2_8dktl")]
+position = Vector2(601, 239)
+
+[node name="VraiPlatform" parent="object" instance=ExtResource("2_g3for")]
+position = Vector2(-110, 277)
+
+[node name="VraiPlatform2" parent="object" instance=ExtResource("2_g3for")]
+position = Vector2(413, 43)
+
+[node name="VraiPlatform3" parent="object" instance=ExtResource("2_g3for")]
+position = Vector2(-447, -12)
