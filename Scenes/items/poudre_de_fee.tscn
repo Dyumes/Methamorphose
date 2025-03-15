@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkif1ao1iaddx"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_37n2w"]
+
+[node name="Button Buying Item" instance=ExtResource("1_37n2w")]
+
+[node name="Button" parent="." index="1"]
+names = "Poudre de Fée"
+quantity_in_store = 10

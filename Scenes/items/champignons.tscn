@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm5h1keyqj6o3"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_mxu01"]
+
+[node name="Button Buying Item" instance=ExtResource("1_mxu01")]
+
+[node name="Button" parent="." index="1"]
+names = "Champignons"
+quantity_in_store = 10

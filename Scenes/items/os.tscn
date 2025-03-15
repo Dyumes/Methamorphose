@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://vjblfi4nh4gw"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_ps8kv"]
+
+[node name="Button Buying Item" instance=ExtResource("1_ps8kv")]
+
+[node name="Button" parent="." index="1"]
+names = "Os"
+quantity_in_store = 10

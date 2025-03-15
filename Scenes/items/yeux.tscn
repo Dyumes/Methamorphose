@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cajlr4ryc6li8"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_uiw54"]
+
+[node name="Button Buying Item" instance=ExtResource("1_uiw54")]
+
+[node name="ColorRect" parent="." index="0"]
+color = Color(0.484311, 0.670758, 0.847506, 1)
+
+[node name="Button" parent="." index="1"]
+scale = Vector2(0.711012, 0.777433)
+names = "Yeux"
+quantity_in_store = 10
