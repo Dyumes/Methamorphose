@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1g75frdfc2qg"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_n3njx"]
+
+[node name="Button Buying Item" instance=ExtResource("1_n3njx")]
+
+[node name="Button" parent="." index="1"]
+names = "Cristaux"
+quantity_in_store = 10

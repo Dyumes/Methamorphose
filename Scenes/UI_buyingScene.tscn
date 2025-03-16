@@ -1,0 +1,46 @@
+[gd_scene load_steps=8 format=3 uid="uid://bosjd4ufkseff"]
+
+[ext_resource type="PackedScene" uid="uid://bkif1ao1iaddx" path="res://scenes/Buying Shop/items/poudre_de_fee.tscn" id="1_htor0"]
+[ext_resource type="PackedScene" uid="uid://vjblfi4nh4gw" path="res://scenes/Buying Shop/items/os.tscn" id="2_qvq18"]
+[ext_resource type="PackedScene" uid="uid://d2wrdvwywxlb8" path="res://scenes/Buying Shop/items/mandragore.tscn" id="3_0wnje"]
+[ext_resource type="PackedScene" uid="uid://cpavqakkgpkjt" path="res://scenes/Buying Shop/items/fines_herbes.tscn" id="4_e2tsq"]
+[ext_resource type="PackedScene" uid="uid://d1g75frdfc2qg" path="res://scenes/Buying Shop/items/cristaux.tscn" id="5_1efy3"]
+[ext_resource type="PackedScene" uid="uid://bm5h1keyqj6o3" path="res://scenes/Buying Shop/items/champignons.tscn" id="6_dko0a"]
+[ext_resource type="PackedScene" uid="uid://dwgdmy0sqtakc" path="res://scenes/Buying Shop/items/sourcil_de_dragon.tscn" id="7_y5en8"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -879.0
+offset_top = -526.0
+offset_right = -879.0
+offset_bottom = -526.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="poudre_de_fee" parent="." instance=ExtResource("1_htor0")]
+position = Vector2(1029, 681)
+
+[node name="os" parent="." instance=ExtResource("2_qvq18")]
+position = Vector2(1150, 681)
+
+[node name="mandragore" parent="." instance=ExtResource("3_0wnje")]
+position = Vector2(1029, 800)
+
+[node name="fines_herbes" parent="." instance=ExtResource("4_e2tsq")]
+position = Vector2(1150, 799)
+
+[node name="cristaux" parent="." instance=ExtResource("5_1efy3")]
+position = Vector2(1029, 928)
+
+[node name="champignons" parent="." instance=ExtResource("6_dko0a")]
+position = Vector2(1601, 681)
+
+[node name="sourcil_de_dragon" parent="." instance=ExtResource("7_y5en8")]
+position = Vector2(1729, 681)

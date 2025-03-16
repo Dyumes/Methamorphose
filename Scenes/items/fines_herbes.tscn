@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cpavqakkgpkjt"]
+
+[ext_resource type="PackedScene" uid="uid://blcsfqqeefgbm" path="res://scenes/Buying Shop/item_buyingScene.tscn" id="1_r4ys2"]
+
+[node name="Button Buying Item" instance=ExtResource("1_r4ys2")]
+
+[node name="Button" parent="." index="1"]
+names = "Fines herbes"
+quantity_in_store = 10

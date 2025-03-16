@@ -1,0 +1,103 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8d624buu053e"]
+
+[ext_resource type="Script" path="res://scripts/Buying Shop/buying_scene.gd" id="1_8t46i"]
+[ext_resource type="PackedScene" uid="uid://bosjd4ufkseff" path="res://scenes/Buying Shop/UI_buyingScene.tscn" id="1_bssjb"]
+[ext_resource type="Texture2D" uid="uid://4naomwfu8c0x" path="res://sprites/wall_seller.png" id="2_khrju"]
+[ext_resource type="Texture2D" uid="uid://duk1kqlm5bw0a" path="res://sprites/Design sans titre (22).png" id="3_skqvc"]
+[ext_resource type="Texture2D" uid="uid://bmrepwrs6m8yr" path="res://sprites/one_shelves.png" id="4_rr8eb"]
+[ext_resource type="PackedScene" uid="uid://bic52gypmu5ve" path="res://scenes/UI_general.tscn" id="5_o4af8"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_8t46i")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 1155.0
+offset_bottom = 641.0
+color = Color(0.233925, 0.233925, 0.233925, 1)
+
+[node name="wall" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(581, 368)
+scale = Vector2(1.125, 0.727539)
+texture = ExtResource("2_khrju")
+
+[node name="shelve_topr" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(873, 222)
+scale = Vector2(1.40667, 1.29333)
+texture = ExtResource("3_skqvc")
+
+[node name="shelve_topl" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(293, 222)
+scale = Vector2(1.40667, 1.29333)
+texture = ExtResource("3_skqvc")
+
+[node name="shelve_midr" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(873, 342)
+scale = Vector2(1.40667, 1.29333)
+texture = ExtResource("3_skqvc")
+
+[node name="shelve_midl" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(293, 342)
+scale = Vector2(1.40667, 1.29333)
+texture = ExtResource("3_skqvc")
+
+[node name="shelve_midl2" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(293, 469)
+scale = Vector2(1.40667, 1.29333)
+texture = ExtResource("3_skqvc")
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 462.0
+offset_top = 302.0
+offset_right = 742.0
+offset_bottom = 642.0
+color = Color(0.374407, 0.991855, 1, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect2"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 24.0
+offset_right = 256.0
+offset_bottom = 80.0
+text = "SELLER"
+horizontal_alignment = 1
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+offset_left = 638.0
+offset_top = 443.0
+offset_right = 918.0
+offset_bottom = 579.0
+color = Color(0.927835, 0.857898, 0.959209, 1)
+
+[node name="Label" type="Label" parent="CanvasLayer/ColorRect3"]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 16.0
+offset_right = 260.0
+offset_bottom = 72.0
+text = "Caisse
+"
+horizontal_alignment = 1
+
+[node name="OneShelves" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(580, 652)
+scale = Vector2(1.86579, 1.70476)
+texture = ExtResource("4_rr8eb")
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("1_bssjb")]
+offset_left = -838.0
+offset_top = -528.0
+offset_right = -838.0
+offset_bottom = -528.0
+
+[node name="GeneralUI" parent="CanvasLayer" instance=ExtResource("5_o4af8")]
+position = Vector2(-1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 319)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

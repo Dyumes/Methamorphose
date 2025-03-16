@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://bm8bdloljul6y"]
+
+[ext_resource type="Theme" path="res://themeUI.tres" id="1_ewnsd"]
+[ext_resource type="FontFile" path="res://Assets/MorrisRoman-Black.ttf" id="2_ucd2t"]
+[ext_resource type="Script" path="res://Scenes/Dialogue/dialog_ui.gd" id="2_yqatb"]
+[ext_resource type="Texture2D" path="res://Assets/UI_Sprites/old-parchment-paper-scroll-sheet-vintage-aged-or-texture-background-png.png" id="4_kymi5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ucd2t"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_right = 65
+
+[sub_resource type="LabelSettings" id="LabelSettings_p47hq"]
+font = ExtResource("2_ucd2t")
+font_size = 32
+
+[sub_resource type="Theme" id="Theme_ucd2t"]
+default_font = ExtResource("2_ucd2t")
+
+[sub_resource type="LabelSettings" id="LabelSettings_54xdn"]
+font = ExtResource("2_ucd2t")
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[node name="DialogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_ewnsd")
+script = ExtResource("2_yqatb")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Polygon2D" type="Polygon2D" parent="Control"]
+position = Vector2(-17, -30)
+polygon = PackedVector2Array(0, 0, 50, 25, 0, 50)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -259.0
+offset_right = 303.0
+offset_bottom = -209.0
+grow_vertical = 0
+theme = ExtResource("1_ewnsd")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ucd2t")
+
+[node name="Control" type="Control" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="SpeakerName" type="Label" parent="PanelContainer/Control"]
+unique_name_in_owner = true
+layout_mode = 2
+offset_left = 8.0
+offset_top = 14.0
+offset_right = 308.0
+offset_bottom = 37.0
+text = "Hatsune Miku"
+label_settings = SubResource("LabelSettings_p47hq")
+
+[node name="DialogBox" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = -210.0
+offset_right = 3.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_ewnsd")
+
+[node name="DialogLine" type="RichTextLabel" parent="DialogBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = SubResource("Theme_ucd2t")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "I want your [shake]soul[/shake]"
+
+[node name="QuestText" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -358.0
+offset_top = 81.0
+offset_right = -70.0
+offset_bottom = 110.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Quest"
+label_settings = SubResource("LabelSettings_54xdn")
+
+[node name="ScrollSprite" type="TextureRect" parent="QuestText"]
+unique_name_in_owner = true
+visible = false
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -32.0
+offset_right = 31.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_kymi5")
+expand_mode = 1
