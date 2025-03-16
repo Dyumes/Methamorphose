@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://cprd4vbaxpkrf"]
+
+[ext_resource type="Script" path="res://ing_marmite.gd" id="1_gjaur"]
+[ext_resource type="Texture2D" uid="uid://b568hklks8ff3" path="res://Ingrédients/moulus/Poudre_de_f%3Fe.webp" id="2_l3g1c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="poudre_f" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_gjaur")
+
+[node name="poudre_f" type="Area2D" parent="."]
+script = ExtResource("1_gjaur")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="poudre_f"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_gjaur")
+
+[node name="Sprite2D" type="Sprite2D" parent="poudre_f"]
+position = Vector2(-1, 0.5)
+scale = Vector2(0.125, 0.124023)
+texture = ExtResource("2_l3g1c")
+script = ExtResource("1_gjaur")
+
+[connection signal="body_entered" from="poudre_f" to="poudre_f" method="_on_body_entered"]
+[connection signal="body_exited" from="poudre_f" to="poudre_f" method="_on_body_exited"]
+[connection signal="mouse_entered" from="poudre_f" to="poudre_f" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="poudre_f" to="poudre_f" method="_on_mouse_exited"]

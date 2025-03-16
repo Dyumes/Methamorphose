@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfpli1v7sqw5e"]
+
+[ext_resource type="Script" path="res://ing_mortier.gd" id="1_7f887"]
+[ext_resource type="Texture2D" uid="uid://bc4342046ce1d" path="res://Ingrédients/raw/Os.webp" id="2_y2s05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="os" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_7f887")
+
+[node name="os" type="Area2D" parent="."]
+script = ExtResource("1_7f887")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="os"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_7f887")
+
+[node name="Sprite2D" type="Sprite2D" parent="os"]
+position = Vector2(-1, 1.06248)
+scale = Vector2(0.8, 0.799219)
+texture = ExtResource("2_y2s05")
+script = ExtResource("1_7f887")
+
+[connection signal="body_entered" from="os" to="os" method="_on_body_entered"]
+[connection signal="body_exited" from="os" to="os" method="_on_body_exited"]
+[connection signal="mouse_entered" from="os" to="os" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="os" to="os" method="_on_mouse_exited"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c3u60v6dg6nxh"]
+
+[ext_resource type="Script" path="res://spawner_mortier.gd" id="1_rhcn7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kana2"]
+size = Vector2(126, 127)
+
+[node name="SpawnerMortier" type="StaticBody2D" groups=["dropable", "spawner", "spawner_mortier"]]
+script = ExtResource("1_rhcn7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kana2")
+script = ExtResource("1_rhcn7")
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.843137, 1, 1, 1)

@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://r2h617on1n0i"]
+
+[ext_resource type="Script" path="res://recep_alambic.gd" id="1_u64ft"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kana2"]
+size = Vector2(126, 127)
+
+[node name="RecepAlambic" type="StaticBody2D" groups=["dropable", "receiver", "receiver_alambic"]]
+script = ExtResource("1_u64ft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_kana2")
+debug_color = Color(0, 0.6, 0.701961, 0.403922)
+
+[node name="ColorRect" type="ColorRect" parent="CollisionShape2D"]
+offset_left = -63.0
+offset_top = -63.0
+offset_right = 64.0
+offset_bottom = 64.0
+mouse_filter = 2
+color = Color(0.843137, 1, 1, 1)
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = -194.0
+offset_top = -114.0
+offset_right = -88.0
+offset_bottom = -74.0

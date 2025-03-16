@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://08uskwb3o1jj"]
+
+[ext_resource type="Script" path="res://ing_marmite.gd" id="1_tixx4"]
+[ext_resource type="Texture2D" uid="uid://cx4qcq5nkya4x" path="res://Ingrédients/moulus/essence_champi.webp" id="2_1evph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="essence_champi" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_tixx4")
+
+[node name="essence_champi" type="Area2D" parent="."]
+script = ExtResource("1_tixx4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="essence_champi"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_tixx4")
+
+[node name="Sprite2D" type="Sprite2D" parent="essence_champi"]
+position = Vector2(-1, 1.07816)
+scale = Vector2(0.4, 0.399512)
+texture = ExtResource("2_1evph")
+script = ExtResource("1_tixx4")
+
+[connection signal="body_entered" from="essence_champi" to="essence_champi" method="_on_body_entered"]
+[connection signal="body_exited" from="essence_champi" to="essence_champi" method="_on_body_exited"]
+[connection signal="mouse_entered" from="essence_champi" to="essence_champi" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="essence_champi" to="essence_champi" method="_on_mouse_exited"]

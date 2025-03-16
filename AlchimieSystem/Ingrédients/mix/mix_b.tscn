@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://b3vk2q5vi3bqf"]
+
+[ext_resource type="Script" path="res://ing_alambic.gd" id="1_ep2r2"]
+[ext_resource type="Texture2D" uid="uid://ddqaxblh0uwyd" path="res://Ingrédients/mix/mix_b_fr.png" id="2_7oryk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="mix_b" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_ep2r2")
+
+[node name="mix_b" type="Area2D" parent="."]
+script = ExtResource("1_ep2r2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mix_b"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_ep2r2")
+
+[node name="Sprite2D" type="Sprite2D" parent="mix_b" groups=["ingredient"]]
+position = Vector2(-1, 1)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7oryk")
+script = ExtResource("1_ep2r2")
+
+[connection signal="body_entered" from="mix_b" to="mix_b" method="_on_body_entered"]
+[connection signal="body_exited" from="mix_b" to="mix_b" method="_on_body_exited"]
+[connection signal="mouse_entered" from="mix_b" to="mix_b" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="mix_b" to="mix_b" method="_on_mouse_exited"]

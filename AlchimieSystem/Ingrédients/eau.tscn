@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu580lqwbakkw"]
+
+[ext_resource type="Script" path="res://ing_marmite.gd" id="1_fw274"]
+[ext_resource type="Texture2D" uid="uid://cl58r6vgeawtm" path="res://Ingrédients/water.webp" id="2_pupgv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="eau" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_fw274")
+
+[node name="eau" type="Area2D" parent="." groups=["ingredient"]]
+script = ExtResource("1_fw274")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="eau"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_fw274")
+
+[node name="Sprite2D" type="Sprite2D" parent="eau"]
+position = Vector2(-1, 1.09771)
+scale = Vector2(0.32, 0.319512)
+texture = ExtResource("2_pupgv")
+script = ExtResource("1_fw274")
+
+[connection signal="body_entered" from="eau" to="eau" method="_on_body_entered"]
+[connection signal="body_exited" from="eau" to="eau" method="_on_body_exited"]
+[connection signal="mouse_entered" from="eau" to="eau" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="eau" to="eau" method="_on_mouse_exited"]

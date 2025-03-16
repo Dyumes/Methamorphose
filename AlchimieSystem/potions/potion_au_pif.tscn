@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3ewjt6oh7wsf"]
+
+[ext_resource type="Script" path="res://potions.gd" id="1_lridk"]
+[ext_resource type="Texture2D" uid="uid://dslq4jtifihy6" path="res://potions/potionpif.webp" id="2_senqw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="Potion au pif" type="Node2D" groups=["potion"]]
+script = ExtResource("1_lridk")
+
+[node name="Potion au pif" type="Area2D" parent="."]
+script = ExtResource("1_lridk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Potion au pif"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_lridk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Potion au pif" groups=["ingredient"]]
+position = Vector2(-1, 1.00001)
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("2_senqw")
+script = ExtResource("1_lridk")
+
+[connection signal="body_entered" from="Potion au pif" to="Potion au pif" method="_on_body_entered"]
+[connection signal="body_exited" from="Potion au pif" to="Potion au pif" method="_on_body_exited"]
+[connection signal="mouse_entered" from="Potion au pif" to="Potion au pif" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Potion au pif" to="Potion au pif" method="_on_mouse_exited"]

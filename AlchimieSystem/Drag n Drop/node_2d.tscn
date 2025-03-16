@@ -1,0 +1,71 @@
+[gd_scene load_steps=15 format=3 uid="uid://dnoo7cpte88i5"]
+
+[ext_resource type="Script" path="res://Drag n Drop/alchemystation.gd" id="1_sht54"]
+[ext_resource type="PackedScene" uid="uid://c3u60v6dg6nxh" path="res://Outils/spawner_mortier.tscn" id="3_b4g45"]
+[ext_resource type="PackedScene" uid="uid://dw1j3pooqjlce" path="res://Outils/recep_mortier.tscn" id="3_pcav6"]
+[ext_resource type="PackedScene" uid="uid://pcoqp3pu8t8x" path="res://Ingrédients/raw/champignons.tscn" id="4_4rpcq"]
+[ext_resource type="PackedScene" uid="uid://bfpli1v7sqw5e" path="res://Ingrédients/raw/os.tscn" id="5_oa7ti"]
+[ext_resource type="PackedScene" uid="uid://c52bd1fwyil0f" path="res://Ingrédients/raw/fée.tscn" id="6_mjv3e"]
+[ext_resource type="PackedScene" uid="uid://iumesvxfnw0n" path="res://Outils/recep_marmite.tscn" id="7_4rvd6"]
+[ext_resource type="PackedScene" uid="uid://cu7qoxm28jrqp" path="res://Outils/spawner_marmite.tscn" id="8_tf2w6"]
+[ext_resource type="Texture2D" uid="uid://bj6xx8pkfej3d" path="res://Outils/mortier_placeholder.png" id="9_0g631"]
+[ext_resource type="PackedScene" uid="uid://r2h617on1n0i" path="res://Outils/recep_alambic.tscn" id="9_ulpyn"]
+[ext_resource type="Texture2D" uid="uid://bgrqu8ghfpgdm" path="res://Outils/marmite_placeholder.png" id="10_gl84p"]
+[ext_resource type="PackedScene" uid="uid://bat1sroliplx4" path="res://Outils/spawner_alambic.tscn" id="10_yrsfd"]
+[ext_resource type="Texture2D" uid="uid://f7o07smu26ma" path="res://Outils/alambic_placeholder.png" id="13_pcytk"]
+[ext_resource type="PackedScene" uid="uid://bu580lqwbakkw" path="res://Ingrédients/eau.tscn" id="14_ltd2t"]
+
+[node name="world" type="Node2D"]
+script = ExtResource("1_sht54")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -16.0
+offset_top = -19.0
+offset_right = 1172.0
+offset_bottom = 671.0
+mouse_filter = 2
+
+[node name="champignons" parent="." instance=ExtResource("4_4rpcq")]
+position = Vector2(810, 147)
+
+[node name="os" parent="." instance=ExtResource("5_oa7ti")]
+position = Vector2(599, 148)
+
+[node name="fée" parent="." instance=ExtResource("6_mjv3e")]
+position = Vector2(386, 151)
+
+[node name="RecepMortier" parent="." instance=ExtResource("3_pcav6")]
+position = Vector2(114, 532)
+
+[node name="SpawnerMortier" parent="." instance=ExtResource("3_b4g45")]
+position = Vector2(253, 532)
+
+[node name="RecepMarmite" parent="." instance=ExtResource("7_4rvd6")]
+position = Vector2(422, 408)
+
+[node name="SpawnerMarmite" parent="." instance=ExtResource("8_tf2w6")]
+position = Vector2(557, 534)
+
+[node name="RecepAlambic" parent="." instance=ExtResource("9_ulpyn")]
+position = Vector2(797, 532)
+
+[node name="SpawnerAlambic" parent="." instance=ExtResource("10_yrsfd")]
+position = Vector2(1001, 532)
+
+[node name="MortierSprite" type="Sprite2D" parent="."]
+position = Vector2(114, 531.5)
+scale = Vector2(0.235955, 0.259184)
+texture = ExtResource("9_0g631")
+
+[node name="MarmiteSprite" type="Sprite2D" parent="."]
+position = Vector2(421.5, 531.75)
+scale = Vector2(0.285377, 0.292839)
+texture = ExtResource("10_gl84p")
+
+[node name="AlambicSprite" type="Sprite2D" parent="."]
+position = Vector2(893, 529)
+scale = Vector2(0.517544, 0.51341)
+texture = ExtResource("13_pcytk")
+
+[node name="eau" parent="." instance=ExtResource("14_ltd2t")]
+position = Vector2(1013, 147)

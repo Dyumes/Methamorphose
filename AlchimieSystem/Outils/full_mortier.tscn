@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbcpq8ynuvl2b"]
+
+[ext_resource type="PackedScene" uid="uid://dw1j3pooqjlce" path="res://Outils/recep_mortier.tscn" id="1_6l7bu"]
+[ext_resource type="PackedScene" uid="uid://c3u60v6dg6nxh" path="res://Outils/spawner_mortier.tscn" id="2_kvj8w"]
+[ext_resource type="Texture2D" uid="uid://bj6xx8pkfej3d" path="res://Outils/mortier_placeholder.png" id="3_j1kuk"]
+
+[node name="Mortier" type="Node2D"]
+
+[node name="SpawnerMortier" parent="." instance=ExtResource("2_kvj8w")]
+position = Vector2(64, 0)
+
+[node name="RecepMortier" parent="." instance=ExtResource("1_6l7bu")]
+position = Vector2(-65, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1, 1.90735e-06)
+scale = Vector2(0.2397, 0.261225)
+texture = ExtResource("3_j1kuk")

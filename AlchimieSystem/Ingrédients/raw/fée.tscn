@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c52bd1fwyil0f"]
+
+[ext_resource type="Script" path="res://ing_mortier.gd" id="1_okerg"]
+[ext_resource type="Texture2D" uid="uid://b3d43bcr4gkj4" path="res://Ingrédients/raw/Navi_(The_Legend_of_Zelda).png" id="2_joita"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="fée" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_okerg")
+
+[node name="fée" type="Area2D" parent="."]
+script = ExtResource("1_okerg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fée"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_okerg")
+
+[node name="Sprite2D" type="Sprite2D" parent="fée"]
+position = Vector2(-1.09375, 0.95023)
+scale = Vector2(0.396865, 0.415908)
+texture = ExtResource("2_joita")
+script = ExtResource("1_okerg")
+
+[connection signal="body_entered" from="fée" to="fée" method="_on_body_entered"]
+[connection signal="body_exited" from="fée" to="fée" method="_on_body_exited"]
+[connection signal="mouse_entered" from="fée" to="fée" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fée" to="fée" method="_on_mouse_exited"]

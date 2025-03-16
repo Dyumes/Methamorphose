@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://sdi4h3peio2v"]
+
+[ext_resource type="Script" path="res://ing_alambic.gd" id="1_conpa"]
+[ext_resource type="Texture2D" uid="uid://bm8fmwlank3vy" path="res://Ingrédients/mix/mix_a_fr.webp" id="2_xi6es"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="mix_a" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_conpa")
+
+[node name="mix_a" type="Area2D" parent="."]
+script = ExtResource("1_conpa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mix_a"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_conpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="mix_a" groups=["ingredient"]]
+position = Vector2(-1, 0.999999)
+scale = Vector2(0.16, 0.107744)
+texture = ExtResource("2_xi6es")
+script = ExtResource("1_conpa")
+
+[connection signal="body_entered" from="mix_a" to="mix_a" method="_on_body_entered"]
+[connection signal="body_exited" from="mix_a" to="mix_a" method="_on_body_exited"]
+[connection signal="mouse_entered" from="mix_a" to="mix_a" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="mix_a" to="mix_a" method="_on_mouse_exited"]

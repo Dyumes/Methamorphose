@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://pcoqp3pu8t8x"]
+
+[ext_resource type="Script" path="res://ing_mortier.gd" id="1_e1p6u"]
+[ext_resource type="Texture2D" uid="uid://dm1mbvquw30m7" path="res://Ingrédients/raw/blue mushroom.png" id="2_e3bpr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a1b2x"]
+size = Vector2(128, 128)
+
+[node name="champignons" type="Node2D" groups=["ingredient"]]
+script = ExtResource("1_e1p6u")
+
+[node name="champignons" type="Area2D" parent="."]
+script = ExtResource("1_e1p6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="champignons"]
+position = Vector2(-1, 1)
+shape = SubResource("RectangleShape2D_a1b2x")
+script = ExtResource("1_e1p6u")
+
+[node name="Sprite2D" type="Sprite2D" parent="champignons"]
+position = Vector2(-1.00001, 1.25)
+scale = Vector2(0.4, 0.398438)
+texture = ExtResource("2_e3bpr")
+script = ExtResource("1_e1p6u")
+
+[connection signal="body_entered" from="champignons" to="champignons" method="_on_body_entered"]
+[connection signal="body_exited" from="champignons" to="champignons" method="_on_body_exited"]
+[connection signal="mouse_entered" from="champignons" to="champignons" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="champignons" to="champignons" method="_on_mouse_exited"]

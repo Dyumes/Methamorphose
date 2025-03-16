@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8qdjoyd46gse"]
+
+[ext_resource type="PackedScene" uid="uid://iumesvxfnw0n" path="res://Outils/recep_marmite.tscn" id="1_qjuoj"]
+[ext_resource type="PackedScene" uid="uid://cu7qoxm28jrqp" path="res://Outils/spawner_marmite.tscn" id="2_dkrtv"]
+[ext_resource type="Texture2D" uid="uid://bgrqu8ghfpgdm" path="res://Outils/marmite_placeholder.png" id="3_jrj6h"]
+
+[node name="Marmite" type="Node2D"]
+
+[node name="RecepMarmite" parent="." instance=ExtResource("1_qjuoj")]
+
+[node name="SpawnerMarmite" parent="." instance=ExtResource("2_dkrtv")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, 111)
+scale = Vector2(0.300708, 0.325448)
+texture = ExtResource("3_jrj6h")
